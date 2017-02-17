@@ -11,7 +11,7 @@ COPY . /src
 
 RUN mkdir -p /build && \
     cd /build && \
-    cmake ../src && \
+    cmake -DOSRM_HAS_ELEVATION:BOOL=ON ../src && \
     make -j8 install && \
     cd / && \
     rm -r /build && \
